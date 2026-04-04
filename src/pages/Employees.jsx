@@ -10,7 +10,7 @@ const Employees = () => {
     <Header category="Page" title="Employees" />
 
     {/* the spread operator(...) is used to expand the elements in the array into individual items into a new context-like spreading cards on a table */}
-    <GridComponent dataSource={employeesData} allowPaging toolbar={['Search']} width="auto">
+    <GridComponent dataSource={employeesData} allowPaging allowSorting toolbar={['Search']} width="auto">
       <ColumnsDirective>
        {employeesGrid.map((item, index)=>(
         <ColumnDirective key={index} {...item}/>
