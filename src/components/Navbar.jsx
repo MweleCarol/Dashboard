@@ -19,7 +19,7 @@ const NavButton = ({title, customFunc, icon, color, dotColor})=> (
 );
 
 const Navbar = () => {
-  const {activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize}= useStateContext();
+  const {activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor}= useStateContext();
 
   // when the [] are empty the function will be called at the start. When a variable is placed instead eg  screenSize it will be called every time the screenSize changes
   useEffect(()=>{
@@ -43,11 +43,11 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
-      <NavButton title="menu" customFunc={()=> setActiveMenu((prevActiveMenu)=> !prevActiveMenu)} color="blue" icon={<AiOutlineMenu/>}/>
+      <NavButton title="menu" customFunc={()=> setActiveMenu((prevActiveMenu)=> !prevActiveMenu)}color={currentColor} icon={<AiOutlineMenu/>}/>
       <div className='flex'>
-        <NavButton title="Cart" customFunc={()=> handleClick('cart')} color="blue" icon={<FiShoppingCart/>}/>
-        <NavButton title="Chat" dotColor="#03C9D7" customFunc={()=> handleClick('chat')} color="blue" icon={<BsChatLeft/>}/>
-        <NavButton title="Notifications" customFunc={()=> handleClick('notification')} color="blue" icon={<RiNotification3Line/>}/>
+        <NavButton title="Cart" customFunc={()=> handleClick('cart')} color={currentColor} icon={<FiShoppingCart/>}/>
+        <NavButton title="Chat" dotColor="#03C9D7" customFunc={()=> handleClick('chat')} color={currentColor} icon={<BsChatLeft/>}/>
+        <NavButton title="Notifications" customFunc={()=> handleClick('notification')} color={currentColor} icon={<RiNotification3Line/>}/>
         <TooltipComponent content="Profile" position='BottomCenter'>
            <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" onClick={()=> handleClick('userProfile')}>
             <img src={avatar} alt="" className='rounded-full w-8 h-8'/>
