@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { Navbar, Footer, Sidebar, ThemeSettings} from './components';
-import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Line, Pie, Financial, ColorPicker, ColorMapping, Editor} from './pages';
+import { Navbar, Sidebar, ThemeSettings} from './components';
+import {Ecommerce, Orders, Calendar, Employees,Stacked, Pyramid, Customers, Kanban, Area, Bar, Line, Pie, Financial, ColorPicker, ColorMapping, Editor} from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
@@ -69,7 +69,7 @@ const App = () => {
           <Route path='/financial' element={<Financial/>} />
           <Route path='/color-mapping' element={<ColorMapping/>} />
           <Route path='/pyramid' element={<Pyramid/>} />
-          <Route path='/stacked' element={<stacked/>} />
+          <Route path='/stacked' element={<Stacked/>} />
         </Routes>
        </div>
       </div>
